@@ -12,7 +12,7 @@ import Github from './img/github.jpg';
 import Linkedin from './img/linkedin.jpg';
 import Resume from './img/resume.jpg';
 
-import Moon from './img/moon.png'; 
+import Moon from './img/moon.jpg'; 
 import Rain from './img/rain.png'; 
 import Sun from './img/sun.jpg'; 
 import Sunny from './img/sunny.png';
@@ -22,8 +22,9 @@ import AW_Resume from './res/ADA_WANG_RESUME.pdf'
 function App() {
   const [weather, setWeather] = useState(true) 
   const [icon, setIcon] = useState(Sunny)
-  const [theme, setTheme] = useState('dark')
-  const [tIcon, setTIcon] = useState(Sun)
+  const [theme, setTheme] = useState('light')
+  const [tIcon, setTIcon] = useState(Moon)
+  const [style, setStyle] = useState('wide')
 
   const rainquery = () => {
 	  $('.rain').empty();
@@ -36,9 +37,13 @@ function App() {
       var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
       var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
       increment += randoFiver;
+      
       drops += '<div class="drop" style="color: #1F51FF; left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
       backDrops += '<div class="drop" style="right: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
     }
+
+    console.log("INCREMENTS")
+    console.log(drops)
 
     $('.rain.front-row').append(drops);
     $('.rain.back-row').append(backDrops);
@@ -49,6 +54,18 @@ function App() {
     $('.rain.front-row').empty();
     $('.rain.back-row').empty();
   }
+
+  var width = $(window).width();
+  $(window).on('resize', function() {
+    if ($(this).width() !== width) {
+      width = $(this).width();
+      if (width <= 880) {
+        setStyle('narrow')
+      } else {
+        setStyle('wide')
+      }
+    }
+  });
 
   useEffect(() => {
     document.body.className = theme;
@@ -61,6 +78,11 @@ function App() {
       rainquery();
     } else {
       stoprain();
+    }
+
+    var width = $(window).width();
+    if (width <= 880) {
+      setStyle('narrow')
     }
   }, [])
 
@@ -86,7 +108,7 @@ function App() {
   };
 
   return (
-    <div className={`App ${theme} back-row-toggle splat-toggle`}>
+    <div className={`App-${style} ${theme} back-row-toggle splat-toggle`}>
       <div className={`rain front-row`}></div>
       <div className={`rain back-row`}></div>
 
@@ -200,7 +222,9 @@ function App() {
                 git="https://github.com/adabingw/playground"
               />
             </div>
-            <div className="center">Find more at my Github!</div>
+            <a href="https://github.com/adabingw">
+                <div className="center">Find more at my Github!</div>
+            </a>
           </div>
       </div>
     </div>

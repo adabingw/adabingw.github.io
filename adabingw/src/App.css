@@ -1,11 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.App {
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.App-wide {
   display: flex; 
   justify-content: center;
   flex-direction: column;
-  padding-left: 25vw;
-  padding-right: 25vw;
+  padding-left: 23vw;
+  padding-right: 23vw;
+}
+
+.App-narrow {
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 
 .light {
@@ -57,20 +71,37 @@ a {
   margin-bottom: 30px;
 }
 
+.center:hover {
+  color: #b3a279;
+}
+
 .icons {
   display: flex; 
   flex-direction: row; 
   align-items: center;
 }
 
-.project {
+.project-wide {
   padding: 20px;
   display: flex; 
   flex-direction: column; 
-  width: 20vw;
+  width: 14vw;
 }
 
-.project:hover {
+.project-narrow {
+  padding: 20px;
+  display: flex; 
+  flex-direction: column; 
+  width: 50vw;
+}
+
+.project-wide:hover {
+  /* color: #bf7249 !important; */
+  cursor: pointer;
+  transform: translate(0, -5px);
+}
+
+.project-narrow:hover {
   /* color: #bf7249 !important; */
   cursor: pointer;
   transform: translate(0, -5px);
@@ -109,14 +140,22 @@ a {
 .project_div {
   display: flex;
   flex-direction: row; 
-  justify-content: center; 
+  /* justify-content: center;  */
+  flex-wrap: wrap;
 }
 
-.work {
+.work-wide {
   padding: 20px;
   display: flex; 
   flex-direction: column; 
   max-width: 45vw;
+}
+
+.work-narrow {
+  padding: 20px;
+  display: flex; 
+  flex-direction: column; 
+  max-width: 95vw;
 }
 
 .work_header {
