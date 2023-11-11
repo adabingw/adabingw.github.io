@@ -123,13 +123,18 @@ function App() {
             Ello, Ada here
           </div>
           <div className="desc">
-            2nd year UWaterloo Software Engineering student. <br />
-            I like building end-to-end products to solve problems in my daily lives. <br/>
-
-            I'm currently exploring the world of AI and all things data. <br />
-
-            In my spare time I love reading, learning history, and watching anime. <br /> <br />
-
+            <ul>
+              <li>3rd year UWaterloo Software Engineering student.</li>
+              <li>I'm a big reader, talk to me about any books!</li>
+              <li>Also an anime watcher and history fan</li>
+              <li>I'm currently exploring the world of AI and learning about all things data and AWS related.</li>
+              <li>My weapons of choice are:
+                <span style={{color: "#e3672d", fontWeight: 'bold'}}> Svelte</span>, 
+                <span style={{color: "#2a92b8", fontWeight: 'bold'}}> Python</span>, 
+                <span style={{color: "#b84d2a", fontWeight: 'bold'}}> Rust</span>, 
+                <span style={{color: "#d19a56", fontWeight: 'bold'}}> AWS</span>, 
+              </li>
+            </ul>
             <div className="icons">
               <a href="https://github.com/adabingw"><img src={Github} alt="github" className={`img ${theme}`}/></a>
               <a href="https://linkedin.com/in/adabingw"><img src={Linkedin} alt="linkedin" className={`img ${theme}`}/></a>
@@ -138,37 +143,40 @@ function App() {
             </div>
           </div>
           <div className="header">
-            Work
+            Experience
           </div>
           <div>
             <div className="work_div">
               <Work 
-                header="McAfee LLC" 
-                position="Fullstack developer intern"
-                date="January 2023 - April 2023" 
+                header="SnapPea Design" 
+                position="Software Engineer intern"
                 desc={[
-                  `Conducted data analysis Databricks extension Mosaic.`,
-                  `Scripted comprehensive React and Redux unit tests for McAfee Windows Protection.`,
-                  `Redesigned module mocking and testing mechanisms to enable more thorough and accurate testing of
-                      React hooks, dynamic API calls, and telemetry data.`,
-                  `Modularized React components and async calls to reducing code duplication.`
+                  `Automated product imports, orders, and fulfillment for Shopify`,
+                  `Developing IoT products that uses MVVM architecture patterns and integrates BME688 AI Gas Sensors with BLE`
                 ]}
-                tools={['Databricks', 'React', 'SQL', 'Jest']}
+                tools={['Firebase', 'Heroku', 'Kotlin', 'C++']}
+                url="https://snappeadesign.com/"
+              />
+              <Work 
+                header="McAfee" 
+                position="Fullstack developer intern"
+                desc={[
+                  `Data analysis using Databricks extension Mosaic.`,
+                  `Module mocking and testing mechanisms to enable more thorough and accurate testing of
+                      React hooks, dynamic API calls, and telemetry data.`,
+                ]}
+                tools={['PySpark', 'React', 'SQL']}
                 url="https://www.mcafee.com/en-ca/index.html"
               />
 
               <Work 
                 header="Makesens" 
-                position="Software developer"
-                date="May 2022 - August 2022" 
+                position="Software developer intern"
                 desc={[
-                  `Developed an Android app using Java to record and display real-time IoT sensor data 
-                      transmitted through Bluetooth Low Energy (BLE).`,
-                  `Improved data transfer by optimizing Bluetooth observer listening`,
-                  `Develop an integrated simulation framework for pipeline monitoring, stress 
-                      analysis, and leak detection using React and AWS Amplify.`
+                  `Developed IoT products to analyze torsion stress on rotary axles.`,
+                  `Created an integrated fullstack simulation framework for hydrogen pipeline monitoring, stress analysis, and leak detection.`
                 ]}
-                tools={['React', 'Android Studio', 'AWS Amplify', 'Java']}
+                tools={['React', 'AWS Amplify', 'Java']}
                 url="http://makesens.ca/"
               />
             </div>
@@ -179,47 +187,60 @@ function App() {
           <div className="project_col">
             <div className="project_div">
               <Project 
-                header="Convrr"
-                desc="Unit and currency conversion desktop application."
-                tools={['React', 'Electron', 'RestAPI']}
-                git="https://github.com/adabingw/convrr"
-              />
-
-              <Project 
-                header="Lyrr"
-                desc="AI generate lyrics from artist composition style."
-                tools={['GPT2', 'Hugging face', 'Pytorch', 'React', 'Flask']}
-                git="https://github.com/adabingw/lyrr"
-              />
-
-              <Project 
-                header="Iago"
+                header="iago"
                 desc="Game bot for turn-based games implementing the Alphazero algorithm."
                 tools={['Tensorflow', 'Python', 'React', 'Flask']}
                 git=""
+                link="https://iago-adabingw.netlify.app/othello"
+                theme={theme}
               />
+
+              <Project 
+                header="gradolatrr"
+                desc="Grade calculator and management system."
+                tools={['DynamoDB', 'AppSync', 'GraphQL', 'Svelte']}
+                git="https://github.com/adabingw/gradolatrr"
+                link="https://main--transcendent-marigold-f5980e.netlify.app/"
+                theme={theme}
+              />
+
+              <Project 
+                header="lyrr"
+                desc="AI generate lyrics from artist composition style."
+                tools={['GPT2', 'Huggingface', 'Pytorch', 'Lambda', 'API Gateway', 'Docker', 'ECR', 'AWS CDK']}
+                git="https://github.com/adabingw/lyrr"
+                link="https://effervescent-cassata-80a49a.netlify.app/"
+                theme={theme}
+              />
+
             </div>
 
             <div className="project_div">
               <Project 
-                header="Gradolatrr"
-                desc="Grade calculator and management system."
-                tools={['PostgreSQL', 'Electron', 'Express', 'React', 'Node']}
-                git="https://github.com/adabingw/gradolatrr"
+                header="convrr"
+                desc="Unit and currency conversion desktop application."
+                tools={['React', 'Electron', 'RestAPI']}
+                git="https://github.com/adabingw/convrr"
+                link="https://main--famous-smakager-e6e253.netlify.app/"
+                theme={theme}
               />
 
               <Project 
-                header="Writrr"
+                header="writrr"
                 desc="Generate realistic writing from your own handwriting."
                 tools={['OpenCV', 'Tensorflow', 'React', 'Flask', 'Python']}
                 git="https://github.com/adabingw/writrr"
+                link=""
+                theme={theme}
               />
 
               <Project 
-                header="Playground"
-                desc="Various ML topics I've played around with"
-                tools={['Python', 'Tensorflow', 'Pytorch']}
-                git="https://github.com/adabingw/playground"
+                header="raytracrr"
+                desc="Raytracer that creates worlds within worlds"
+                tools={['Rust']}
+                git="https://github.com/adabingw/raytracrr"
+                link=""
+                theme={theme}
               />
             </div>
             <a href="https://github.com/adabingw">

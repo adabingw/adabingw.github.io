@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
+  /* font-family: 'Outfit', sans-serif; */
+  letter-spacing: 0.5px;
 }
 
 .App-wide {
@@ -95,17 +98,15 @@ a {
   width: 50vw;
 }
 
-.project-wide:hover {
-  /* color: #bf7249 !important; */
+/* .project-wide:hover {
   cursor: pointer;
   transform: translate(0, -5px);
 }
 
 .project-narrow:hover {
-  /* color: #bf7249 !important; */
   cursor: pointer;
   transform: translate(0, -5px);
-}
+} */
 
 .project_header {
   font-weight: bold; 
@@ -119,7 +120,16 @@ a {
 }
 
 .project_img {
-  width: 100px;
+  width: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.project_icons {
+  justify-content: space-between;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
 }
 
 .project_tools {
@@ -148,7 +158,7 @@ a {
   padding: 20px;
   display: flex; 
   flex-direction: column; 
-  max-width: 45vw;
+  max-width: 55vw;
 }
 
 .work-narrow {
@@ -205,6 +215,7 @@ a {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
+  letter-spacing: 1px;
   /* color: #574b3b; */
 }
 
