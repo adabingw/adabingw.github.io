@@ -21,7 +21,7 @@ function Project(props) {
     $(window).on('resize', function() {
       if ($(this).width() !== width) {
         width = $(this).width();
-        if (width <= 880) {
+        if (width <= 900) {
           setStyle('narrow')
         } else {
           setStyle('wide')
@@ -37,8 +37,7 @@ function Project(props) {
     }, [])
 
     return (
-        <div className={`project-${style}`}>
-        {/* <a href={git}> */}
+        <div className={`work-${style}`}>
             <div className="project_icons">
               <div className="project_header">{header}</div>
               <div>
@@ -46,13 +45,12 @@ function Project(props) {
                 {link != "" && <a href={link}><img src={Link} alt="link" className={`project_img ${theme}`}/></a>}
               </div>
             </div>
-            <div className="project_desc">{desc}</div>
+            <div className="work_desc">{desc}</div>
             <div className="project_tools">
                 {tools.map((tool, index) => {
                     return <div className="project_tool">{tool}</div>
                 })}
             </div>
-        {/* </a> */}
         </div>
     )
 }

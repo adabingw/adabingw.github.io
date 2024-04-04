@@ -59,7 +59,7 @@ function App() {
   $(window).on('resize', function() {
     if ($(this).width() !== width) {
       width = $(this).width();
-      if (width <= 880) {
+      if (width <= 900) {
         setStyle('narrow')
       } else {
         setStyle('wide')
@@ -119,133 +119,190 @@ function App() {
           <div className={`theme`} >
             <img src={tIcon} className={`img ${theme}`} alt="theme" onClick={() => toggleTheme()} />
           </div>
-          <div className="header">
-            Ello, Ada here
-          </div>
-          <div className="desc">
-            <ul>
-              <li>3rd year UWaterloo Software Engineering student.</li>
-              <li>I'm a big reader, talk to me about any books!</li>
-              <li>Also an anime watcher and history fan</li>
-              <li>I'm currently exploring the world of AI and learning about all things data and AWS related.</li>
-              <li>My weapons of choice are:
-                <span style={{color: "#e3672d", fontWeight: 'bold'}}> Svelte</span>, 
-                <span style={{color: "#2a92b8", fontWeight: 'bold'}}> Python</span>, 
-                <span style={{color: "#b84d2a", fontWeight: 'bold'}}> Rust</span>, 
-                <span style={{color: "#d19a56", fontWeight: 'bold'}}> AWS</span>, 
-              </li>
-            </ul>
-            <div className="icons">
-              <a href="https://github.com/adabingw"><img src={Github} alt="github" className={`img ${theme}`}/></a>
-              <a href="https://linkedin.com/in/adabingw"><img src={Linkedin} alt="linkedin" className={`img ${theme}`}/></a>
-              <a href="mailto:abwang@uwaterloo.ca"><img src={Email} alt="email" className={`img ${theme}`} /></a>
-              <a href={AW_Resume} target = "_blank"><img src={Resume} alt="resume" className={`img ${theme}`} /></a>
-            </div>
-          </div>
-          <div className="header">
-            Experience
-          </div>
+
+          <div className={`section-${style}`}>
           <div>
-            <div className="work_div">
-              <Work 
-                header="SnapPea Design" 
-                position="Software Engineer intern"
-                desc={[
-                  `Automated product imports, orders, and fulfillment for Shopify`,
-                  `Developing IoT products that uses MVVM architecture patterns and integrates BME688 AI Gas Sensors with BLE`
-                ]}
-                tools={['Firebase', 'Heroku', 'Kotlin', 'C++']}
-                url="https://snappeadesign.com/"
-              />
-              <Work 
-                header="McAfee" 
-                position="Fullstack developer intern"
-                desc={[
-                  `Data analysis using Databricks extension Mosaic.`,
-                  `Module mocking and testing mechanisms to enable more thorough and accurate testing of
-                      React hooks, dynamic API calls, and telemetry data.`,
-                ]}
-                tools={['PySpark', 'React', 'SQL']}
-                url="https://www.mcafee.com/en-ca/index.html"
-              />
-
-              <Work 
-                header="Makesens" 
-                position="Software developer intern"
-                desc={[
-                  `Developed IoT products to analyze torsion stress on rotary axles.`,
-                  `Created an integrated fullstack simulation framework for hydrogen pipeline monitoring, stress analysis, and leak detection.`
-                ]}
-                tools={['React', 'AWS Amplify', 'Java']}
-                url="http://makesens.ca/"
-              />
+            <div className="header">
+              Ello, Ada here
+            </div>
+            <div className="desc">
+              <ul>
+                <li>3rd year Software Engineering student from U of Waterloo</li>
+                <li>a big reader, talk to me about any books!</li>
+                <li>also an anime watcher and history fan</li>
+                <li>currently exploring the world of AI and learning about all things data and AWS related.</li>
+                <li>My weapons of choice are:
+                  <span style={{color: "#e3672d", fontWeight: 'bold'}}> Svelte</span>, 
+                  <span style={{color: "#2a92b8", fontWeight: 'bold'}}> Python</span>, 
+                  <span style={{color: "#b84d2a", fontWeight: 'bold'}}> Rust</span>, 
+                  <span style={{color: "#d19a56", fontWeight: 'bold'}}> AWS</span>
+                </li>
+              </ul>
+              <div className="icons">
+                <a href="https://github.com/adabingw" className="links">github</a>
+                <a href="https://linkedin.com/in/adabingw"  className="links">linkedin</a>
+                <a href="mailto:abwang@uwaterloo.ca" className="links">email</a>
+                <a href={AW_Resume} target = "_blank" className="links" rel="noreferrer">resume</a>
+              </div>
             </div>
           </div>
-          <div className="header">
-            Projects
           </div>
-          <div className="project_col">
-            <div className="project_div">
-              <Project 
-                header="iago"
-                desc="Game bot for turn-based games implementing the Alphazero algorithm."
-                tools={['Tensorflow', 'Python', 'React', 'Flask']}
-                git=""
-                link="https://iago-adabingw.netlify.app/othello"
-                theme={theme}
-              />
 
-              <Project 
-                header="gradolatrr"
-                desc="Grade calculator and management system."
-                tools={['DynamoDB', 'AppSync', 'GraphQL', 'Svelte']}
-                git="https://github.com/adabingw/gradolatrr"
-                link="https://main--transcendent-marigold-f5980e.netlify.app/"
-                theme={theme}
-              />
-
-              <Project 
-                header="lyrr"
-                desc="AI generate lyrics from artist composition style."
-                tools={['GPT2', 'Huggingface', 'Pytorch', 'Lambda', 'API Gateway', 'Docker', 'ECR', 'AWS CDK']}
-                git="https://github.com/adabingw/lyrr"
-                link="https://effervescent-cassata-80a49a.netlify.app/"
-                theme={theme}
-              />
-
+          <div className={`section-${style}`}>
+            <div className={`section-left-${style}`}>
+              <div className="header">
+                <span className="head">Chapter 1. </span>Experience
+              </div>
+              <div className={`experiences-${style}`}>
+                <div className="experience">
+                  <span>Texada</span><span>2024 Summer</span>
+                </div>
+                <div className="experience">
+                  <span>SnapPea</span><span>2023 Fall</span>
+                </div>
+                <div className="experience">
+                  <span>McAfee</span><span>2023 Winter</span>
+                </div>
+                <div className="experience">
+                  <span>Makesens</span><span>2022 Summer</span>
+                </div>
+              </div>
             </div>
-
-            <div className="project_div">
-              <Project 
-                header="convrr"
-                desc="Unit and currency conversion desktop application."
-                tools={['React', 'Electron', 'RestAPI']}
-                git="https://github.com/adabingw/convrr"
-                link="https://main--famous-smakager-e6e253.netlify.app/"
-                theme={theme}
-              />
-
-              <Project 
-                header="writrr"
-                desc="Generate realistic writing from your own handwriting."
-                tools={['OpenCV', 'Tensorflow', 'React', 'Flask', 'Python']}
-                git="https://github.com/adabingw/writrr"
-                link=""
-                theme={theme}
-              />
-
-              <Project 
-                header="raytracrr"
-                desc="Raytracer that creates worlds within worlds"
-                tools={['Rust']}
-                git="https://github.com/adabingw/raytracrr"
-                link=""
-                theme={theme}
-              />
+            <div>
+              <div className="work_div">
+                <Work 
+                  header="Texada Software" 
+                  position="Software Engineer intern"
+                  desc={'Incoming Summer 2024 SWE Intern!!! (Hopefully) working with more AWS and delivering SaaS products.'}
+                  url="https://texadasoftware.com/"
+                />
+                <Work 
+                  header="SnapPea" 
+                  position="Software Engineer intern"
+                  desc={`Creating prototypes and architecting solutions for gas sensors and real-time gas detection. `}
+                  url="https://snappeadesign.com/"
+                />
+                <Work 
+                  header="McAfee" 
+                  position="Fullstack developer intern"
+                  desc={`Data analysis with Databricks and Apache. Also created guidelines of module mocking to unify everyone
+                    on the basis of software testing.`}
+                  url="https://www.mcafee.com/en-ca/index.html"
+                />
+                <Work 
+                  header="Makesens" 
+                  position="Software developer intern"
+                  desc={
+                    `Developing IoT products to analyze torsion stress on rotary axles and 
+                      simulation framework for hydrogen pipeline monitoring.`
+                  }
+                  url="http://makesens.ca/"
+                />
+                {/* <Work 
+                  header="UCalgary & Youreka" 
+                  position="Cancer research student"
+                  desc={
+                    `Created Kaplan Meier graphs and used Log Sum Rank tests to study effects of mRNA 
+                    expressions on survivalships and identify prognostic biomarkers.`
+                  }
+                  url="http://makesens.ca/"
+                /> */}
+              </div>
             </div>
-            <a href="https://github.com/adabingw">
-                <div className="center">Find more at my Github!</div>
-            </a>
+          </div>
+
+          <div className={`section-${style}`}>
+            <div className={`section-left-${style} projects`}>
+              <div className="header">
+                <span className="head">Chapter 2. </span>Projects
+              </div>
+              <a href="https://github.com/adabingw">
+                  <div className="center">Find more at my Github!</div>
+              </a>
+            </div>
+            <div>
+              <div className="work_div">
+                <Work 
+                  header="iago" 
+                  desc={'Game bot for turn-based games implementing the Alphazero algorithm.'}
+                  url="https://iago-adabingw.netlify.app/othello"
+                />
+                <Work 
+                  header="graku" 
+                  desc={`Grade calculator and management system written with Svelte, DynamoDB, and GraphQL.`}
+                  url="https://main--transcendent-marigold-f5980e.netlify.app/"
+                />
+                <Work 
+                  header="leekcake" 
+                  desc={`Directly commit leetcode submittions to your github repo (chrome extension!)`}
+                  url="https://github.com/adabingw/leekcake"
+                />
+                <Work 
+                  header="lyrr" 
+                  desc={`Genereate lyrics from your favourite artists (inspired by Taylor Swift lol).`}
+                  url="https://github.com/adabingw/lyrr"
+                />
+                <Work 
+                  header="writrr" 
+                  desc={`Generate realistic handwriting from your own handwriting`}
+                  url="https://github.com/adabingw/writrr"
+                />
+                <Work 
+                  header="convrr" 
+                  desc={`Unit converter made for my dad: an engineer who deals with complicated things`}
+                  url="https://main--famous-smakager-e6e253.netlify.app/"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={`section-${style}`}>
+            <div className={`section-left-${style}`}>
+              <div className="header">
+                <span className="head">Chapter 3. </span>Me!
+              </div>
+              <div className="center">Here lies my hobbies, of which I surprisingly do have some...</div>
+            </div>
+            <div>
+              <div className="work_div">
+                <Work 
+                  header="Reading" 
+                  desc={`
+                    Harvester of emotions...I like diving headfirst into books dealing with the human condition 
+                    and small bits of fantasy (optional). Historical fiction are gems to me, so are characters. Think:
+                    The Lies of Locke Lamora, Demon Copperhead, The Kingdoms. I will read anything you recommend though,
+                    even genres I don't like (because I believe in meaningful conversations).
+                  `}
+                />
+                <Work 
+                  header="Anime-ing (and Manga)" 
+                  desc={`
+                    I like dumb fun and epic sagas. Sometimes throw in a romance or a scifi that scratches my itch 
+                    like nothing else. Tops: Vinland Saga, Nichijou, Gintama, Hyouka, Kimi ni Todoke, Psycho Pass.
+                  `}
+                />
+                <Work 
+                  header="Painting" 
+                  desc={`Probably my longest hobby that I actually used to take classes for (???). Of all the mediums
+                    I played with, nothing speaks to me the most like oil painting. But...oil paint is messay and expensive, 
+                    so now I resort to acrylics to soothe my mind during tough times in school.
+                    Follow the link to see what I've created :D`}
+                  url="https://photos.app.goo.gl/yiB8QNRMGYo93VcJA"
+                />
+                {/* <Work 
+                  header="Sport-ing (and grass touching)" 
+                  desc={`
+                    I snowboard and go vroom vroom :) oh and I also play badminton.
+                  `}
+                /> */}
+                <Work 
+                  header="Fridge magnets" 
+                  position=""
+                  desc={`I've started collecting fridge magnets of cities I visit so that, in the future, I 
+                    could look at a magnet and tell a story...`}
+                />
+              </div>
+            </div>
           </div>
       </div>
     </div>

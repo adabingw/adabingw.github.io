@@ -2,19 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 body {
-  font-family: 'Roboto', sans-serif;
-  /* font-family: 'Outfit', sans-serif; */
-  letter-spacing: 0.5px;
+  font-family: "Lora", serif;
+  margin-bottom: 15vh;
+  overflow-x: hidden;
 }
 
 .App-wide {
   display: flex; 
   justify-content: center;
   flex-direction: column;
-  padding-left: 23vw;
-  padding-right: 23vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .App-narrow {
@@ -31,7 +33,7 @@ body {
 }
 
 .dark {
-  background-color: black;
+  background-color: #212121;
   color: white;
   filter: invert(100%) !important;
 }
@@ -49,6 +51,25 @@ img:hover {
   position:absolute;
   right: 25px;
   top: 25px;
+}
+
+.experiences-wide {
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+.experiences-narrow {
+  display: none;
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+}
+
+.experience {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .theme {
@@ -69,13 +90,8 @@ a {
 }
 
 .center {
-  text-align: center;
-  font-style: italic;
+  font-family: "Inter", sans-serif;
   margin-bottom: 30px;
-}
-
-.center:hover {
-  color: #b3a279;
 }
 
 .icons {
@@ -84,108 +100,31 @@ a {
   align-items: center;
 }
 
-.project-wide {
-  padding: 20px;
-  display: flex; 
-  flex-direction: column; 
-  width: 14vw;
-}
-
-.project-narrow {
-  padding: 20px;
-  display: flex; 
-  flex-direction: column; 
-  width: 50vw;
-}
-
-/* .project-wide:hover {
-  cursor: pointer;
-  transform: translate(0, -5px);
-}
-
-.project-narrow:hover {
-  cursor: pointer;
-  transform: translate(0, -5px);
-} */
-
-.project_header {
-  font-weight: bold; 
-  font-size: 20px;
-  margin-bottom: 10px;
-  /* color: #574b3b; */
-}
-
-.project_desc {
-  padding-bottom: 5px;
-}
-
-.project_img {
-  width: 15px;
-  margin-left: 3px;
-  margin-right: 3px;
-}
-
-.project_icons {
-  justify-content: space-between;
-  display: flex; 
-  flex-direction: row; 
-  align-items: center;
-}
-
-.project_tools {
-  display: flex; 
-  flex-direction: row;
-  font-size: 13px;
-  color: #b3a279;
-  font-family: 'IBM Plex Mono', monospace;
-  flex-wrap: wrap;
-  white-space: pre-line;
-}
-
-.project_tool {
-  margin-right: 18px;
-  white-space: nowrap;
-}
-
-.project_div {
-  display: flex;
-  flex-direction: row; 
-  /* justify-content: center;  */
-  flex-wrap: wrap;
-}
-
 .work-wide {
   padding: 20px;
   display: flex; 
   flex-direction: column; 
-  max-width: 55vw;
+  width: 15vw;
 }
 
 .work-narrow {
   padding: 20px;
   display: flex; 
   flex-direction: column; 
-  max-width: 95vw;
+  width: 38vw;
 }
 
 .work_header {
-  font-weight: bold; 
   font-size: 20px;
   margin-bottom: 3px;
-  /* color: #574b3b; */
 }
 
 .work_desc {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  /* color: #313131; */
+  margin-top: 15px;
   padding-bottom: 5px;
-}
-
-.work_position {
-  font-weight: bold;
-}
-
-.work_date {
-  font-family: 'IBM Plex Mono', monospace;
-  font-style: italic;
 }
 
 .work_tools {
@@ -204,21 +143,59 @@ a {
 }
 
 .work_div {
+  max-width: 800px;
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
+  flex-direction: row; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.links {
+  margin-right: 18px;
+  font-size: 16px;
+}
+
+.links:hover {
+  color: #b3a279;
 }
 
 .header {
-  margin-top: 50px;
   font-size: 30px;
-  font-weight: bold;
   margin-bottom: 10px;
   letter-spacing: 1px;
   /* color: #574b3b; */
 }
 
-.desc {
-  font-size: 18px;
+.section-wide {
+  display: flex;
+  flex-direction: row;
+  margin-top: 150px;
+}
+
+.section-narrow {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.projects {
+  /* padding-right: 110px; */
+}
+
+.section-left-wide {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  width: 30vw;
+}
+
+.section-left-narrow {
+  display: flex;
+  flex-direction: column;
+  width: 75vw;
+}
+
+li {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
