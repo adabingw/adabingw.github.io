@@ -7,7 +7,7 @@
 
 body {
   font-family: "Lora", serif;
-  margin-bottom: 15vh;
+  padding-bottom: 15vh;
   overflow-x: hidden;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .dark {
-  background-color: #212121;
+  background-color: black;
   color: white;
   filter: invert(100%) !important;
 }
@@ -111,7 +111,7 @@ a {
   padding: 20px;
   display: flex; 
   flex-direction: column; 
-  width: 38vw;
+  width: 30vw;
 }
 
 .work_header {
