@@ -7,7 +7,6 @@
 
 body {
   font-family: "Lora", serif;
-  padding-bottom: 15vh;
   overflow-x: hidden;
 }
 
@@ -27,24 +26,18 @@ body {
   padding-right: 2vw;
 }
 
+.last {
+  padding-bottom: 15vh;
+}
+
 .light {
   background-color: white;
   color: black;
 }
 
 .dark {
-  background-color: black;
+  background-color: #1f1f1f;
   color: white;
-  filter: invert(100%) !important;
-}
-
-.img {
-  margin-right: 10px;
-  width: 30px;
-}
-
-img:hover {
-  cursor: pointer;
 }
 
 .weather {
@@ -159,11 +152,15 @@ a {
   color: #b3a279;
 }
 
+.img {
+  margin-right: 10px;
+  width: 30px;
+}
+
 .header {
   font-size: 30px;
   margin-bottom: 10px;
   letter-spacing: 1px;
-  /* color: #574b3b; */
 }
 
 .section-wide {
@@ -176,10 +173,6 @@ a {
   display: flex;
   flex-direction: column;
   margin-top: 150px;
-}
-
-.projects {
-  /* padding-right: 110px; */
 }
 
 .section-left-wide {

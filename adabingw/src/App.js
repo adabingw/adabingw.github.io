@@ -6,30 +6,28 @@ import $ from 'jquery';
 
 import Work from './Work';
 
-import Moon from './img/moon.jpg'; 
-import Rain from './img/rain.png'; 
-import Sun from './img/sun.jpg'; 
-import Sunny from './img/sunny.png';
+import Light from './svg/Light.js';
+import Dark from './svg/Dark.js';
+import Cloudy from './svg/Cloudy.js';
+import Rainy from './svg/Rainy.js';
 
 import AW_Resume from './res/ADA_WANG_RESUME.pdf'
 
 function App() {
-  const [weather, setWeather] = useState(true) 
-  const [icon, setIcon] = useState(Sunny)
-  const [theme, setTheme] = useState('light')
-  const [tIcon, setTIcon] = useState(Moon)
+  const [weather, setWeather] = useState(true);             // rainy: true, cloudy: false
+  const [theme, setTheme] = useState(true);              // light: true, dark: false
   const [style, setStyle] = useState('wide')
 
   const rainquery = () => {
 	  $('.rain').empty();
 
-    var increment = 0;
-    var drops = "";
-    var backDrops = "";
+    let increment = 0;
+    let drops = "";
+    let backDrops = "";
 
     while (increment < 100 && weather) {
-      var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
-      var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+      let randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+      let randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
       increment += randoFiver;
       
       drops += '<div class="drop" style="color: #1F51FF; left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
@@ -46,74 +44,56 @@ function App() {
     $('.rain.back-row').empty();
   }
 
-  var width = $(window).width();
+  let width = $(window).width();
   $(window).on('resize', function() {
     if ($(this).width() !== width) {
       width = $(this).width();
-      if (width <= 900) {
-        setStyle('narrow')
-      } else {
-        setStyle('wide')
-      }
+      if (width <= 900) setStyle('narrow')
+      else setStyle('wide')
     }
   });
 
   useEffect(() => {
     document.body.className = theme;
-    if (theme == 'dark') setTIcon(Sun);
-    else if (theme == 'light') setTIcon(Moon);
   }, [theme]);
 
   useEffect(() => {
-    if (weather) {
-      rainquery();
-    } else {
-      stoprain();
-    }
+    if (weather) rainquery();
+    else stoprain();
 
-    var width = $(window).width();
-    if (width <= 880) {
-      setStyle('narrow')
-    }
+    let width = $(window).width();
+    if (width <= 880) setStyle('narrow')
   }, [])
 
   useEffect(() => {
-    if (weather == true) {
-      setIcon(Sunny);
-      rainquery();
-    }
-    else if (weather == false) {
-      setIcon(Rain);
-      stoprain();
-    };
+    if (weather) rainquery();
+    else stoprain();
   }, [weather]);
 
   const toggleTheme = () => {
-    if (theme == 'dark') setTheme('light'); 
-    else if (theme == 'light') setTheme('dark');
+    setTheme(!theme);
   };
 
   const toggleWeather = () => {
-    if (weather) setWeather(false);
-    else if (!weather) setWeather(true);
+    setWeather(!weather);
   };
 
   return (
-    <div className={`App-${style} ${theme} back-row-toggle splat-toggle`}>
+    <div className={`App-${style} ${theme ? 'light' : 'dark'} back-row-toggle splat-toggle`}>
       <div className={`rain front-row`}></div>
       <div className={`rain back-row`}></div>
 
       <div className="content">
-          <div className={`weather`}>
-            <img src={icon} className={`img ${theme}`} alt="theme" onClick={() => toggleWeather()}/>
+          <div className={`weather img`} onClick={toggleWeather}>
+            {weather ? <Rainy theme={theme} /> : <Cloudy theme={theme} />}
           </div>
-          <div className={`theme`} >
-            <img src={tIcon} className={`img ${theme}`} alt="theme" onClick={() => toggleTheme()} />
+          <div className={`theme img`} onClick={toggleTheme}>
+            {theme ? <Dark /> : <Light />}
           </div>
 
           <div className={`section-${style}`}>
           <div>
-            <div className="header">
+            <div className="header" >
               Ello, Ada here
             </div>
             <div className="desc">
@@ -122,7 +102,7 @@ function App() {
                 <li>a big reader, talk to me about any books!</li>
                 <li>also an anime watcher and history fan</li>
                 <li>currently exploring the world of AI and learning about all things data and AWS related.</li>
-                <li>My weapons of choice are:
+                <li>how i stack my pancakes:
                   <span style={{color: "#e3672d", fontWeight: 'bold'}}> Svelte</span>, 
                   <span style={{color: "#2a92b8", fontWeight: 'bold'}}> Python</span>, 
                   <span style={{color: "#b84d2a", fontWeight: 'bold'}}> Rust</span>, 
@@ -163,8 +143,11 @@ function App() {
               <div className="work_div">
                 <Work 
                   header="Texada Software" 
-                  position="Software Engineer intern"
-                  desc={'Incoming Summer 2024 SWE Intern!!! (Hopefully) working with more AWS and delivering SaaS products.'}
+                  position="Core developer intern"
+                  desc={`Terraforming Auth0 system and creating a pipeline for custom slack messages to be 
+                    delivered after codebuild results. Managed APIs and DynamoDB and Lambda infrastructure. 
+                    Some stuff I touched: Codebuild/pipeline/deploy/star, 
+                    Lambda, Eventbridge, DynamoDB, Elasticache, ApiGateway, S3.`}
                   url="https://texadasoftware.com/"
                 />
                 <Work 
@@ -221,12 +204,17 @@ function App() {
                 <Work 
                   header="graku" 
                   desc={`Grade calculator and management system written with Svelte, DynamoDB, and GraphQL.`}
-                  url="https://main--transcendent-marigold-f5980e.netlify.app/"
+                  url="https://github.com/adabingw/graku/"
                 />
                 <Work 
                   header="leekcake" 
                   desc={`Directly commit leetcode submittions to your github repo (chrome extension!)`}
                   url="https://github.com/adabingw/leekcake"
+                />
+                <Work 
+                  header="iiwii" 
+                  desc={`Middle class text editor (like Notion??)`}
+                  url="https://github.com/adabingw/iiwii"
                 />
                 <Work 
                   header="lyrr" 
@@ -247,7 +235,7 @@ function App() {
             </div>
           </div>
 
-          <div className={`section-${style}`}>
+          <div className={`section-${style} last`}>
             <div className={`section-left-${style}`}>
               <div className="header">
                 <span className="head">Chapter 3. </span>Me!
