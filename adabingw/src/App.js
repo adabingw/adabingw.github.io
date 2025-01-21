@@ -126,6 +126,12 @@ function App() {
               </div>
               <div className={`experiences-${style}`}>
                 <div className="experience">
+                  <span>???</span><span>2025 Summer</span>
+                </div>
+                <div className="experience">
+                  <span>Kortex</span><span>2025 Winter</span>
+                </div>
+                <div className="experience">
                   <span>Texada</span><span>2024 Summer</span>
                 </div>
                 <div className="experience">
@@ -142,12 +148,16 @@ function App() {
             <div>
               <div className="work_div">
                 <Work 
+                  header="Kortex" 
+                  position="Software Engineering intern"
+                  desc={`Helping create the second brain to capture and remember.`}
+                  url="https://www.kortex.co/"
+                />
+                <Work 
                   header="Texada Software" 
                   position="Core developer intern"
                   desc={`Terraforming Auth0 system and creating a pipeline for custom slack messages to be 
-                    delivered after codebuild results. Managed APIs and DynamoDB and Lambda infrastructure. 
-                    Some stuff I touched: Codebuild/pipeline/deploy/star, 
-                    Lambda, Eventbridge, DynamoDB, Elasticache, ApiGateway, S3.`}
+                    delivered after codebuild results. Managed APIGateway and DynamoDB and Lambda infrastructure. `}
                   url="https://texadasoftware.com/"
                 />
                 <Work 
@@ -172,7 +182,7 @@ function App() {
                   }
                   url="http://makesens.ca/"
                 />
-                {/* <Work 
+                <Work 
                   header="UCalgary & Youreka" 
                   position="Cancer research student"
                   desc={
@@ -180,7 +190,7 @@ function App() {
                     expressions on survivalships and identify prognostic biomarkers.`
                   }
                   url="http://makesens.ca/"
-                /> */}
+                />
               </div>
             </div>
           </div>
