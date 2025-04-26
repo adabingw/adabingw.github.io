@@ -98,7 +98,7 @@ function App() {
             </div>
             <div className="desc">
               <ul>
-                <li>3rd year Software Engineering student from U of Waterloo</li>
+                <li>4th year Software Engineering student from U of Waterloo</li>
                 <li>a big reader, talk to me about any books!</li>
                 <li>also an anime watcher and history fan</li>
                 <li>currently exploring the world of AI and learning about all things data and AWS related.</li>
@@ -126,7 +126,7 @@ function App() {
               </div>
               <div className={`experiences-${style}`}>
                 <div className="experience">
-                  <span>???</span><span>2025 Summer</span>
+                  <span>Statsig</span><span>2025 Summer</span>
                 </div>
                 <div className="experience">
                   <span>Kortex</span><span>2025 Winter</span>
@@ -147,6 +147,12 @@ function App() {
             </div>
             <div>
               <div className="work_div">
+                <Work 
+                  header="Statsig" 
+                  position="Software Engineering intern"
+                  desc={`Incoming!!! intern :D`}
+                  url="https://www.statsig.com/"
+                />
                 <Work 
                   header="Kortex" 
                   position="Software Engineering intern"
