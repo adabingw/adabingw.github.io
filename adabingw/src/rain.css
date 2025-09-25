@@ -7,7 +7,7 @@
 }
 
 .rain.front-row {
-  margin-top: -0px;
+  margin-top: 0px;
   opacity: 0.8;
 }
 
@@ -15,7 +15,7 @@
   display: none;
   z-index: 1;
   opacity: 0.5;
-  margin-top: -0px;
+  margin-top: 0px;
 }
 
 body.back-row-toggle .rain.back-row {
@@ -32,15 +32,8 @@ body.back-row-toggle .rain.back-row {
 }
 
 @keyframes drop {
-  0% {
-    transform: translateY(0vh);
-  }
-  75% {
-    transform: translateY(250vh);
-  }
-  100% {
-    transform: translateY(350vh);
-  }
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(var(--fall-distance)); }
 }
 
 .stem {
@@ -95,15 +88,13 @@ body.splat-toggle .splat {
     transform: scale(1);
   }
   100% {
-    opacity: 0;
+    opacity: 0.2;
     transform: scale(1.5);
   }
 }
 
 .content {
   z-index: 3;
-  /* overflow-y: scroll; */
-  /* height: 100vh; */
 }
 
 .splat-toggle {

@@ -53,6 +53,14 @@ function App() {
     }
   });
 
+  function setFallDistance() {
+    document.documentElement.style.setProperty('--fall-distance', (document.scrollHeight + 300) + 'px');
+  }
+
+  // run on load & resize
+  window.addEventListener('load', setFallDistance);
+  window.addEventListener('resize', setFallDistance);
+
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
