@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.6bea963a.css",
-    "main.js": "/static/js/main.aeda2422.js",
+    "main.css": "/static/css/main.0d9d2c2d.css",
+    "main.js": "/static/js/main.ca2f6bfd.js",
     "static/media/ADA_WANG_RESUME.pdf": "/static/media/ADA_WANG_RESUME.cbe145d8a3c4caf64dd8.pdf",
     "index.html": "/index.html",
-    "main.6bea963a.css.map": "/static/css/main.6bea963a.css.map",
-    "main.aeda2422.js.map": "/static/js/main.aeda2422.js.map"
+    "main.0d9d2c2d.css.map": "/static/css/main.0d9d2c2d.css.map",
+    "main.ca2f6bfd.js.map": "/static/js/main.ca2f6bfd.js.map"
   },
   "entrypoints": [
-    "static/css/main.6bea963a.css",
-    "static/js/main.aeda2422.js"
+    "static/css/main.0d9d2c2d.css",
+    "static/js/main.ca2f6bfd.js"
   ]
 }
