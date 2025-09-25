@@ -12,7 +12,6 @@ body {
 
 .App-wide {
   display: flex; 
-  justify-content: center;
   flex-direction: column;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -20,7 +19,6 @@ body {
 
 .App-narrow {
   display: flex; 
-  justify-content: center;
   flex-direction: column;
   padding-left: 2vw;
   padding-right: 2vw;
@@ -175,6 +173,11 @@ a {
   margin-top: 150px;
 }
 
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
 .section-left-wide {
   display: flex;
   flex-direction: column;
@@ -191,4 +194,17 @@ a {
 li {
   font-size: 16px;
   font-family: "Inter", sans-serif;
+}
+
+.courses-header {
+  font-family: "Inter", sans-serif;
+  margin-top: 30px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.courses {
+  font-family: "Inter", sans-serif;
+  margin-top: 10px;
+  font-size: 15px;
 }

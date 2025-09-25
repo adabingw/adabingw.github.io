@@ -16,7 +16,7 @@ import AW_Resume from './res/ADA_WANG_RESUME.pdf'
 function App() {
   const [weather, setWeather] = useState(true);             // rainy: true, cloudy: false
   const [theme, setTheme] = useState(true);              // light: true, dark: false
-  const [style, setStyle] = useState('wide')
+  const [style, setStyle] = useState('wide');
 
   const rainquery = () => {
 	  $('.rain').empty();
@@ -48,8 +48,8 @@ function App() {
   $(window).on('resize', function() {
     if ($(this).width() !== width) {
       width = $(this).width();
-      if (width <= 900) setStyle('narrow')
-      else setStyle('wide')
+      if (width <= 900) setStyle('narrow');
+      else setStyle('wide');
     }
   });
 
@@ -62,7 +62,7 @@ function App() {
     else stoprain();
 
     let width = $(window).width();
-    if (width <= 880) setStyle('narrow')
+    if (width <= 880) setStyle('narrow');
   }, [])
 
   useEffect(() => {
@@ -149,8 +149,8 @@ function App() {
               <div className="work_div">
                 <Work 
                   header="Statsig" 
-                  position="Software Engineering intern"
-                  desc={`Incoming!!! intern :D`}
+                  position="Data Infrastructure intern"
+                  desc={`Optimizing deployment pipelines, integrating custom tooling for in-house orchestration solutions, and deploying high-volume log management alternatives.`}
                   url="https://www.statsig.com/"
                 />
                 <Work 
